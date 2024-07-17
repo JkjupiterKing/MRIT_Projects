@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manage-purchase-orders</title>
+    <link rel="stylesheet" href="../../resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../app/create-purchase-orders/create-purchase-orders.css">
+    <link rel="icon" href="../../resources/Images/supply-chain-management.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="openbtn btn btn-secondary" onclick="openNav()">&#9776;</button>
+        <button id="logoutBtn" class="btn btn-secondary">
+            Logout <img src="../../resources/Images/logout.png" alt="icon" style="width: 1.1em; margin-bottom: 0.2em;">
+        </button>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <!-- Side navigation content loaded dynamically -->
+    </div>
+    <main>
+        <br>
+        <div id="manage-orders">
+            <div id="form-container">
+                <h2>Create Purchase Order</h2>
+                <form id="create-order-form">
+                    <div class="form-group">
+                        <label for="item">Item name:</label>
+                        <input type="text" class="form-control" id="item" placeholder="Enter item name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="supplier">Supplier name:</label>
+                        <input type="text" class="form-control" id="supplier" placeholder="Enter supplier name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="text" class="form-control" id="price" placeholder="Enter purchase price" required>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" id="submitOrderBtn">Create Purchase Order</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript files at the end of body for faster loading -->
+    <script src="../../resources/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../../resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../app/create-purchase-orders/create-purchase-orders.js"></script>
+</body>
+</html>
