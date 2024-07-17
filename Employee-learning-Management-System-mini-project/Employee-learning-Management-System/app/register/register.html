@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../../resources/bootstrap/css/bootstrap.min.css">
+    <link href="../../app/register/register.css" rel="stylesheet">
+    <link rel="icon" href="../../resources/Images/competence-logo.gif" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Register</div>
+    <div class="content">
+        <form id="registerForm">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Last Name</span>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Department</span>
+                    <input type="text" id="department" name="department" placeholder="Enter your department" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Position</span>
+                    <input type="text" id="position" name="position" placeholder="Enter your position" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Hire Date</span>
+                    <input type="date" id="hireDate" name="hireDate" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Birth Date</span>
+                    <input type="date" id="birthDate" name="birthDate" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-box textarea-box">
+                    <span class="details">Address</span>
+                    <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <p style="margin-top: 10px;">Already registered? <a href="../../app/Login/login.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p>Congratulations! You have successfully registered.</p>
+              <!-- You can add more details or actions here if needed -->
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+    <script src="../../resources/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../../resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../app/register/register.js"></script>
+</body>
+</html>

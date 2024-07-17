@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../../resources/fonts/PTSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+/* Custom styles specific to the sidebar */
+.sidenav {
+  font-family: 'PT Sans';
+  height: 100%;
+  width: 17.5em; /* Adjust width as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111; /* Sidebar background color */
+  padding-top: 20px; /* Space from top */
+}
+.sidenav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181; /* Link text color */
+  display: block;
+  transition: 0.3s; /* Smooth transition on hover */
+}
+.sidenav a:hover {
+  color: #f1f1f1; /* Hover color */
+}
+.sidenav .navbar-brand {
+  font-size: 24px;
+  color: #f1f1f1; /* Brand text color */
+  display: block;
+  padding: 20px 15px;
+  text-align: center;
+  text-decoration: none;
+}
+.nav-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link img {
+  width: 1.3em;
+  height: auto;
+  margin-right: 0.5em;
+  margin-bottom: 0.3em;
+}
+.nav-link:hover {
+  background-color: #333; /* Hover background color */
+}
