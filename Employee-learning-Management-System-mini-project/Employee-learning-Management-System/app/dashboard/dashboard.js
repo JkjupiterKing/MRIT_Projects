@@ -3,7 +3,13 @@ $('#mySidenav').load('../common/sidenav.html');
 var enrolledCourses;
 async function fetchUsername() {
     try {
-        const apiUrl = 'http://localhost:8080/employees'; // Replace with your API endpoint
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (!currentUser || !currentUser.employeeId) {
+            throw new Error('User details not found in localStorage');
+        }
+
+        const apiUrl = `http://localhost:8080/employees/${currentUser.employeeId}`; // Replace with your API endpoint to fetch user details
 
         const response = await fetch(apiUrl, {
             method: 'GET',
@@ -13,28 +19,20 @@ async function fetchUsername() {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to fetch username');
+            throw new Error('Failed to fetch user details');
         }
 
-        const data = await response.json();
+        const userData = await response.json();
 
-        // Assuming data is an array of employees and you want the first employee's firstname
-        if (data.length > 0 && data[0].firstName) {
-            const firstName = data[0].firstName;
+        if (userData.firstName) {
+            const firstName = userData.firstName;
             document.getElementById('welcomeMessage').textContent = `Welcome, ${firstName}!`;
-            // Store only the current user's details in localStorage
-            const currentUser = {
-                firstName: firstName,
-                employeeId: data[0].employeeId, // Adjust based on your API response structure
-                // Add other relevant user details if needed
-            };
-            localStorage.setItem('currentUser', JSON.stringify(currentUser));
         } else {
             throw new Error('Firstname not found in API response');
         }
     } catch (error) {
-        console.error('Error fetching firstname:', error.message);
-        document.getElementById('welcomeMessage').textContent = 'Failed to load firstname';
+        console.error('Error fetching username:', error.message);
+        document.getElementById('welcomeMessage').textContent = 'Failed to load username';
     }
 }
 
@@ -141,6 +139,18 @@ document.getElementById('searchButton').addEventListener('click', function() {
 function enrollCourse(courseId) {
     const apiUrl = `http://localhost:8080/enrollments/addenrollment`;
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (!currentUser || !currentUser.employeeId) {
+        console.error('Current user not found or missing employeeId in localStorage');
+        alert('Failed to enroll in the course. Please log in again.');
+        return;
+    }
+
+    if (!courseId) {
+        console.error('Invalid courseId:', courseId);
+        alert('Failed to enroll in the course. Invalid course selected.');
+        return;
+    }
 
     const enrollmentData = {
         course: { courseId: courseId },

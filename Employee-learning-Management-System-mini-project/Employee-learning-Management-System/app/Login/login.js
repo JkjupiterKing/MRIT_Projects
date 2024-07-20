@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Save user info in localStorage or session storage if needed
                         localStorage.setItem('currentUser', JSON.stringify(employee));
-
+                        
                         // Redirect to home page upon successful login
                         window.location.href = '../../app/dashboard/dashboard.html';
                     } else {
